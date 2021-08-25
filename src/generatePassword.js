@@ -32,3 +32,5 @@ function generatePassword(options = defaultOptions) {
 
   return password;
 }
+
+module.exports = { generatePassword };
