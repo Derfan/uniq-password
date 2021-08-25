@@ -8,20 +8,28 @@ Utility function for generating uniq password, can be used by Node.js or browser
 $ npm install @derfan/password-generator --save
 ```
 
+or
+
+```bash
+$ yarn add @derfan/password-generator
+```
+
 ## Usage
 
 ```javascript
-const { generatePassword } = require("@derfan/password-generator");
-
-// OR
-
 import { generatePassword } from "@derfan/password-generator";
 ```
 
-```javascript
-const config = { length: 10 };
+or
 
-generatePassword(config);
+```javascript
+const { generatePassword } = require("@derfan/password-generator");
+```
+
+```javascript
+const password = generatePassword({ length: 10 });
+
+console.log(password); // gLk7C_ycv3
 ```
 
 ## Available options
