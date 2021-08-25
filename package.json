@@ -12,9 +12,11 @@
     "url": "git+https://github.com/Derfan/password-generator.git"
   },
   "keywords": [
+    "generate",
     "password",
-    "generator",
-    "random"
+    "uniq",
+    "random",
+    "pass"
   ],
   "author": "Borys Medvediev <medvediev.b@gmail.com>",
   "license": "MIT",
