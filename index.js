@@ -5,16 +5,27 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function generatePassword(options) {
-  var letters = 'abcdefghigklmnopqrstuvwzys';
-  var lettersUpper = letters.toUpperCase();
-  var numbers = '0123456789';
-  var symbols = '!@#$%^&*()';
-  var allChars = letters + lettersUpper + numbers + symbols;
-  var password = '';
+const defaultOptions = {
+  length: 16,
+  withLowerLetters: true,
+  withUpperLetters: true,
+  withNumbers: true,
+  withSymbols: true,
+};
+
+const rules = {
+  withLowerLetters: 'abcdefghigklmnopqrstuvwzys',
+  withUpperLetters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  withNumbers: '0123456789',
+  withSymbols: '!@#$%^&*(){}=_-',
+};
+
+function generatePassword(options = defaultOptions) {
+  const allChars = Object.keys(rules).reduce((acc, rule) => options[rule] ? acc += rules[rule] : acc, '');
+  let password = '';
 
   while(password.length !== options.length) {
-    var index = getRandomInt(0, allChars.length - 1);
+    const index = getRandomInt(0, allChars.length - 1);
 
     password += allChars[index];
   }
