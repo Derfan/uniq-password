@@ -13,21 +13,25 @@ const defaultOptions = {
   withSymbols: true,
 };
 
-const rules = {
-  withLowerLetters: 'abcdefghigklmnopqrstuvwzys',
-  withUpperLetters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  withNumbers: '0123456789',
-  withSymbols: '!@#$%^&*(){}=_-',
-};
-
 function generatePassword(options = defaultOptions) {
-  const allChars = Object.keys(rules).reduce((acc, rule) => options[rule] ? acc += rules[rule] : acc, '');
+  const params = { ...defaultOptions, ...options };
+
+  let chars = '';
   let password = '';
 
-  while(password.length !== options.length) {
-    const index = getRandomInt(0, allChars.length - 1);
+  if (params.withLowerLetters) chars += 'abcdefghigklmnopqrstuvwzys';
+  if (params.withUpperLetters) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  if (params.withNumbers) chars += '0123456789';
+  if (params.withSymbols) chars += '!@#$%^&*(){}=_-';
 
-    password += allChars[index];
+  if (!chars.length) {
+    throw new Error('At least one of the category should be selected');
+  }
+
+  while(password.length !== params.length) {
+    const index = getRandomInt(0, chars.length - 1);
+
+    password += chars[index];
   }
 
   return password;
