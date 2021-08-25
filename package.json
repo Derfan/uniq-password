@@ -1,6 +1,6 @@
 {
   "name": "@derfan/password-generator",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Random password generator",
   "main": "index.js",
   "types": "index.d.ts",
