@@ -5,7 +5,7 @@ Utility function for generating uniq password, can be used by Node.js or browser
 ## Installation
 
 ```bash
-$ npm install generate-password --save
+$ npm install @derfan/password-generator --save
 ```
 
 ## Usage
