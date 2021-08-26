@@ -3,7 +3,7 @@
   "version": "0.2.4",
   "description": "Random password generator",
   "main": "index.js",
-  "types": "src/generatePassword.d.ts",
+  "types": "dist/generatePassword.d.ts",
   "scripts": {
     "test": "jest"
   },

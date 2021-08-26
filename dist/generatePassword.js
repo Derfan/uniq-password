@@ -37,4 +37,4 @@ function generatePassword(options = defaultOptions) {
   return password;
 }
 
-module.exports = { generatePassword };
+module.exports = { getRandomInt, generatePassword, defaultOptions };

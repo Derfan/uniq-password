@@ -1,8 +1,8 @@
-const { generatePassword } = require('./generatePassword');
+const { generatePassword, defaultOptions } = require('./generatePassword');
 
 describe('generatePassword', () => {
   test('should generate with default length', () => {
-    expect(generatePassword().length).toBe(16);
+    expect(generatePassword().length).toBe(defaultOptions.length);
   });
 
   test('should generate with given length', () => {

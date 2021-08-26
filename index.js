@@ -1,1 +1,1 @@
-module.exports = require('./src/generatePassword');
+module.exports = require('./dist/generatePassword');
