@@ -1,4 +1,4 @@
-interface Options {
+interface PasswordOptions {
   /**
    * Length of the generated password.
    * @default 10
@@ -27,4 +27,4 @@ interface Options {
 }
 
 /* Generate one uniq password */
-export function generatePassword(options?:Options):string;
+export function generatePassword(options?:PasswordOptions):string;
