@@ -1,6 +1,6 @@
 {
   "name": "uniq-password",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Random password generator",
   "main": "index.js",
   "types": "dist/generatePassword.d.ts",
