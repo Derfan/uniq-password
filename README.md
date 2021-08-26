@@ -1,29 +1,29 @@
-# password-generator
+# uniq-password
 
 Utility function for generating uniq password, can be used by Node.js or browser.
 
 ## Installation
 
 ```bash
-$ npm install @derfan/password-generator --save
+$ npm install uniq-password --save
 ```
 
 or
 
 ```bash
-$ yarn add @derfan/password-generator
+$ yarn add uniq-password
 ```
 
 ## Usage
 
 ```javascript
-import { generatePassword } from "@derfan/password-generator";
+import { generatePassword } from "uniq-password";
 ```
 
 or
 
 ```javascript
-const { generatePassword } = require("@derfan/password-generator");
+const { generatePassword } = require("uniq-password");
 ```
 
 ```javascript
