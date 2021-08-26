@@ -1,5 +1,5 @@
 {
-  "name": "@derfan/password-generator",
+  "name": "uniq-password",
   "version": "0.2.4",
   "description": "Random password generator",
   "main": "index.js",
