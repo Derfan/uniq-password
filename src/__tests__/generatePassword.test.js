@@ -1,4 +1,4 @@
-const { generatePassword, defaultOptions } = require('../dist/generatePassword');
+const { generatePassword, defaultOptions } = require('../index');
 
 describe('generatePassword', () => {
   test('should generate with default length', () => {
@@ -6,7 +6,7 @@ describe('generatePassword', () => {
   });
 
   test('should generate with given length', () => {
-    [1, 10, 50, 75, 100].forEach(length => {
+    [1, 10, 50, 75, 100].forEach((length) => {
       expect(generatePassword({ length }).length).toBe(length);
     });
   });

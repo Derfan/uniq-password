@@ -1,4 +1,4 @@
-function getRandomInt(min, max) {
+function getRandomInt(min: number, max: number): number {
   min = Math.ceil(min);
   max = Math.floor(max);
 
@@ -13,7 +13,7 @@ const defaultOptions = {
   withSymbols: true,
 };
 
-function generatePassword(options = defaultOptions) {
+function generatePassword(options = defaultOptions): string {
   const params = { ...defaultOptions, ...options };
 
   let chars = '';
@@ -28,7 +28,7 @@ function generatePassword(options = defaultOptions) {
     throw new Error('At least one of the category should be selected');
   }
 
-  while(password.length !== params.length) {
+  while (password.length !== params.length) {
     const index = getRandomInt(0, chars.length - 1);
 
     password += chars[index];
@@ -37,4 +37,4 @@ function generatePassword(options = defaultOptions) {
   return password;
 }
 
-module.exports = { getRandomInt, generatePassword, defaultOptions };
+module.exports = { generatePassword, defaultOptions };
