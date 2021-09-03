@@ -1,4 +1,4 @@
-const { generatePassword, defaultOptions } = require('./generatePassword');
+const { generatePassword, defaultOptions } = require('../dist/generatePassword');
 
 describe('generatePassword', () => {
   test('should generate with default length', () => {
