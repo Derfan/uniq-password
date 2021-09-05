@@ -1,4 +1,4 @@
-function getRandomInt(min:number, max:number):number {
+function getRandomInt(min: number, max: number): number {
   min = Math.ceil(min);
   max = Math.floor(max);
 
@@ -10,27 +10,27 @@ export interface PasswordOptions {
    * Length of the generated password.
    * @default 10
    */
-  length?: number,
+  length?: number;
   /**
    * Should the password include lowrcase letters
    * @default true
    */
-  withLowerLetters?: boolean,
+  withLowerLetters?: boolean;
   /**
    * Should the password include uppercase letters
    * @default true
    */
-  withUpperLetters?: boolean,
+  withUpperLetters?: boolean;
   /**
    * Should the password include numbers
    * @default true
    */
-  withNumbers?: boolean,
+  withNumbers?: boolean;
   /**
    * Should the password include symbols
    * @default true
    */
-  withSymbols?: boolean,
+  withSymbols?: boolean;
 }
 
 export const defaultOptions = {
@@ -41,7 +41,7 @@ export const defaultOptions = {
   withSymbols: true,
 };
 
-export function generatePassword(options:PasswordOptions = defaultOptions):string {
+export function generatePassword(options: PasswordOptions = defaultOptions): string {
   const params = { ...defaultOptions, ...options };
 
   let chars = '';
