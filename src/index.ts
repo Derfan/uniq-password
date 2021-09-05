@@ -1,11 +1,39 @@
-function getRandomInt(min: number, max: number): number {
+function getRandomInt(min:number, max:number):number {
   min = Math.ceil(min);
   max = Math.floor(max);
 
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const defaultOptions = {
+export interface PasswordOptions {
+  /**
+   * Length of the generated password.
+   * @default 10
+   */
+  length?: number,
+  /**
+   * Should the password include lowrcase letters
+   * @default true
+   */
+  withLowerLetters?: boolean,
+  /**
+   * Should the password include uppercase letters
+   * @default true
+   */
+  withUpperLetters?: boolean,
+  /**
+   * Should the password include numbers
+   * @default true
+   */
+  withNumbers?: boolean,
+  /**
+   * Should the password include symbols
+   * @default true
+   */
+  withSymbols?: boolean,
+}
+
+export const defaultOptions = {
   length: 16,
   withLowerLetters: true,
   withUpperLetters: true,
@@ -13,7 +41,7 @@ const defaultOptions = {
   withSymbols: true,
 };
 
-function generatePassword(options = defaultOptions): string {
+export function generatePassword(options:PasswordOptions = defaultOptions):string {
   const params = { ...defaultOptions, ...options };
 
   let chars = '';
@@ -36,5 +64,3 @@ function generatePassword(options = defaultOptions): string {
 
   return password;
 }
-
-module.exports = { generatePassword, defaultOptions };
